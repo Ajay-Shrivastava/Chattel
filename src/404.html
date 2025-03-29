@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    // Capture the current path
+    var redirectPath = location.pathname + location.search + location.hash;
+
+    // Store it in sessionStorage **only if it doesn't exist**
+    if (!sessionStorage.getItem('redirected')) {
+      sessionStorage.setItem('redirectPath', redirectPath);
+      sessionStorage.setItem('redirected', 'true'); // Mark as redirected
+    }
+
+    // Redirect to index.html
+    window.location.replace("/Chattel/");
+  </script>
+</head>
+<body></body>
+</html>
