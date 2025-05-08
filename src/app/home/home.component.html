@@ -1,1 +1,35 @@
-<p>home works!</p>
+<div class="home">
+    <span class="title">
+        Chattel
+    </span>
+    <span class="tagline">Your secret space for secure conversations</span>
+    <div class="name">
+        <input type="text" name="Name" id="Name" class="nameInput" placeholder="Enter your name" #name>
+        <div class="requiredDiv">
+            <span class="required">required</span>
+        </div>
+    </div>
+    <button *ngIf="!invited" type="button" class="createBtn" (click)="GenerateBase(name.value)">Generate Secrate Room</button>
+    <input *ngIf="invited" type="text" class="roomInput" placeholder="Enter your room ID" #roomId>
+    <span *ngIf="!invited" (click)="toggleInvited()" class="ancherLink">Got an invitation: Click Here!</span>
+    <span *ngIf="invited" (click)="toggleInvited()" class="ancherLink">New here, Want your secret base: Click Here!</span>
+    <img src="mask.png" class="maskIcon">
+</div>
+
+<div class="footer">
+
+</div>
+
+<div class="confidential">
+    <img src="confidential.png" class="lockIcon">
+</div>
+
+<div class="alertBox" *ngIf="alertBox">
+    <div class="leftsection">
+
+    </div>
+    <div class="rightsection">
+        <span class="alertTitle">INVALID NAME</span> <br>
+        <span class="alertText">Please enter a valid name</span>
+    </div>
+</div>

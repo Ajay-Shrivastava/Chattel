@@ -1,1 +1,25 @@
-<p>chatroom works!</p>
+<div class="chatroom">
+    <div class="roomsList">
+        <div class="roomListsTitle">
+            <img src="mask.png" alt="Secrate base list" class="roomIcon">
+        </div>
+        <div class="basesList">
+            <div class="bases" *ngFor="let base of registeredBases">
+                {{base}}
+            </div>
+        </div>
+    </div>
+    <div class="chatBox">
+        <div class="msgSection">
+            <div class="msgRow" [ngClass]="{'othersMsgRow': msg.sender != ourId, 'ourMsgRow': msg.sender == ourId}" *ngFor="let msg of messages">
+                <div class="messages" [ngClass]="{'othersMsg': msg.sender != ourId, 'ourMsg': msg.sender == ourId}">
+                    {{msg.message}}
+                </div>
+            </div>
+        </div>
+        <div class="typingBox">
+            <input type="text" name="typing" id="typing" class="typing">
+            <button type="button" class="sendBtn" (click)="sendMessage()">Send</button>
+        </div>
+    </div>
+</div>

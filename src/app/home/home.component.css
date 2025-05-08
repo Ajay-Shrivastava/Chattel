@@ -1,0 +1,215 @@
+.home{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    z-index: 100;
+    /* background-color: #f0f0f0; */
+}
+
+.maskIcon{
+    position: absolute;
+    top: 40px;
+    width: 130px;
+    opacity: 0.6;
+    z-index: 1;
+    filter: drop-shadow(0 0 5px #ffffff);
+    transition: filter 0.3s ease-in-out;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.maskIcon:hover {
+    opacity: 1;
+    filter: drop-shadow(0 0 10px #00ffcc) 
+    drop-shadow(0 0 20px #00ffcc) 
+    drop-shadow(0 0 40px #00ffcc);
+}
+
+.maskIcon:active {
+    filter: drop-shadow(0 0 5px #00ffcc) 
+    drop-shadow(0 0 10px #00ffcc) 
+    drop-shadow(0 0 20px #00ffcc) 
+    drop-shadow(0 0 40px #00ffcc) 
+    drop-shadow(0 0 80px #00ffcc)
+    drop-shadow(0 0 160px #00ffcc)
+    drop-shadow(0 0 640px #00ffcc)
+    drop-shadow(0 0 1280px #00ffcc);
+}
+
+.title{
+    letter-spacing: -12px;
+    font-size: 15rem;
+    color: #1f1f1f;
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(240, 240, 240, 0.3), 0 0 25px rgba(240, 240, 240, 0.3), 0 0 5px rgba(240, 240, 240, 0.3);
+}
+
+.name {
+    position: relative;
+}
+
+.nameInput{
+    width: 300px;
+    height: 50px;
+    padding: 10px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    border: none;
+    margin-top: 55px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #1f1f1f;
+    position: relative;
+}
+
+.required {
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    margin-right: 10px;
+    text-align: center;
+    margin: 0;
+}
+
+.requiredDiv{
+    position: absolute;
+    top: 27px;
+    right: 0px;
+    z-index: -1;
+    background: white;
+    text-align: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 4px 12px;
+    background-color: #610000;
+    border: 1px solid white;
+}
+
+.createBtn {
+    background-color: #1f1f1f;
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+.shakeBtn {
+    animation: shake .5s forwards;
+}
+
+.roomInput {
+    width: 300px;
+    height: 50px;
+    padding: 10px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: 2px solid #1f1f1f;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #1f1f1f;
+}
+
+.tagline{
+    font-size: 2rem;
+    color: #ff9595;
+    text-align: center;
+    letter-spacing: 20px;
+    animation: color-change 3s infinite linear;
+}
+
+@keyframes color-change {
+    0% { filter: hue-rotate(0deg); }    
+    50% { filter: hue-rotate(180deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.ancherLink {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.ancherLink:hover {
+    /* color: #ff9595; */
+    color: #00d0ff;
+    transform: scale(1.05);
+}
+
+.createBtn:hover {
+    background-color: #006488;
+    transform: scale(1.05);
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-size: 1.2rem;
+    color: #ffffff;
+    background-color: #1f1f1f;
+}
+
+.confidential {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -3;
+    opacity: 0.4;
+}
+
+.lockIcon {
+    width: 1400px;
+    filter: blur(3px);
+}
+
+.alertBox {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 300px;
+    height: 80px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 12px;
+    overflow: hidden;
+}
+
+.leftsection {
+    width: 12%;
+    height: 100%;
+    background-color: #ff0000;
+}
+
+.alertTitle {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #510000;
+    margin-bottom: 10px;
+}

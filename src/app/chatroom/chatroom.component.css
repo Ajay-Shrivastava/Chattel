@@ -1,0 +1,165 @@
+.chatroom {
+    display: flex;
+    height: 100vh;
+}
+
+.roomsList {
+    width: 25%;
+    height: 100%;
+    border-right: 2px solid black;
+    background-color: #1f1f1f;
+    position: fixed;
+}
+
+.basesList{
+    width: 25%;
+    height: 100%;
+    border-right: 2px solid black;
+    background-color: #1f1f1f;
+    position: fixed;
+    overflow-y: scroll;
+}
+
+.roomIcon {
+    width: 70px;
+    filter: invert(1);
+    animation: ConstentGlow 2s infinite linear;
+}
+
+@keyframes ConstentGlow {
+    0% { filter: invert(1) drop-shadow(0 0 5px #00ffcc) drop-shadow(0 0 10px #00ffcc) drop-shadow(0 0 20px #00ffcc) drop-shadow(0 0 40px #00ffcc); }
+    50% { filter: invert(1) drop-shadow(0 0 5px #00ffcc) drop-shadow(0 0 10px #00ffcc) drop-shadow(0 0 20px #00ffcc) drop-shadow(0 0 40px #00ffcc) hue-rotate(360deg); }
+    100% { filter: invert(1) drop-shadow(0 0 5px #00ffcc) drop-shadow(0 0 10px #00ffcc) drop-shadow(0 0 20px #00ffcc) drop-shadow(0 0 40px #00ffcc); }
+}
+
+
+.roomListsTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: black;
+    color: rgb(0, 170, 255);
+    overflow: hidden;
+}
+
+.bases {
+    text-align: center;
+    padding: 15px;
+    background-color:#1f1f1f;
+    color: white;
+    border: 1px solid rgba(108, 108, 108, 0.46);
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 3px rgb(255, 255, 255), inset -1px -1px 3px rgb(0, 0, 0);
+}
+
+.bases:hover {
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: rgb(0, 141, 154);
+    transform: scale(1.05);
+}   
+
+.messages {
+    padding: 10px;
+    margin: 10px;
+    background-color: bisque;
+    min-width: 100px;
+    max-width: 300px;
+    box-shadow: 3px 3px 3px rgb(0, 0, 0), inset 3px 3px 3px rgb(255, 255, 255);
+}
+
+.chatBox{
+    width: 75%;
+    margin-left: 25%; /* Adjust to match the width of the fixed element */
+}
+
+.msgSection {
+    height: calc(100% - 40px);
+    overflow-y: scroll;
+}
+
+.typingBox{
+    display: flex;
+    position: fixed;
+    height: 35px;
+    width: 100%;
+}
+
+.typing {
+    height: 100%;
+    width: calc(74.5% - 60px);
+    font-size: 16px;
+    color: black;
+}
+
+.typingBox input:focus {
+    outline: none;
+}
+
+.sendBtn {
+    height: 40px;
+    width: 60px;
+    margin: 0;
+    background-color: rgb(0, 141, 154);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.othersMsg {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    text-align: left;  
+    position: relative; 
+    margin-left: 20px;
+}
+
+.othersMsg::before {
+    content: " ";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: bisque;
+    position: absolute;
+    top: 0;
+    left: -14px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.ourMsg {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: right;
+    position: relative;
+    margin-right: 20px;
+}
+
+.ourMsg::before {
+    content: " ";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: bisque;
+    position: absolute;
+    top: 0;
+    right: -14px;
+    clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
+}
+
+.msgRow{
+}
+
+.othersMsgRow {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.ourMsgRow {
+    display: flex;
+    justify-content: flex-end;
+}
